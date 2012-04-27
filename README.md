@@ -14,6 +14,11 @@ To make this work you have to add a property 'image_code' in the products.
 Here is an example of the most complicated usage of the bullets
 
 
+Important!!!
+If one product belongs to multiple taxon's this extension uses the bullets attached to the first taxon. 
+The attributes from the parent taxons are not displayed!
+
+
 Installation
 ------------
 
@@ -38,4 +43,4 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
     $ bundle exec rake test_app
     $ bundle exec rspec spec
 
-Copyright (c) 2012 Gudata, released under the New BSD License
+Copyright (c) 2012 Gudasoft, released under the New BSD License
