@@ -1,0 +1,17 @@
+<% 
+show_bullets_for_taxon = @product.taxons.first
+
+image_code_property_id = @product.product_properties.where(:property_id => Gator::Application::PRODUCT_PROPERTIES[:image_code] ).first.value
+
+bullets = show_bullets_for_taxon.bullets.image_code(image_code_property_id).active.sorted
+
+unless !(@product or bullets.empty?) %>
+  <section id="bullets">
+    <ul>
+      <% 
+      bullets.each do |bullet| %>
+        <%= content_tag :li, bullet.description %>
+      <% end %>
+    </ul>
+  </section>
+<% end %> 

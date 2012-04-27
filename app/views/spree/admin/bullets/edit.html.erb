@@ -1,0 +1,10 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1>Editing Bullet</h1>
+
+<%= render 'spree/shared/error_messages', :target => @bullet %>
+
+<%= form_for  [:admin, @taxonomy, @taxon, @bullet], :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <p class="form-buttons" data-hook="buttons"><%= button t(:save) %></p>
+<% end %>

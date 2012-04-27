@@ -1,0 +1,11 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+ error_creating: Error creating
+ successfully_created_bullet: Successfully Created Bullet
+ successfully_removed_bullet: Successfully Removed 
+ successfully_updated_bullet: Successfully Updated
+ active: Active
+ not_active: Not Active
+ save: Save

@@ -1,0 +1,41 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<div class="toolbar" data-hook="toolbar">
+  <ul class="actions">
+    <li>
+      <p><%= button_link_to t(:'new'), new_admin_taxonomy_taxon_bullet_url( @taxonomy, @taxon), :icon => 'add' %></p>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1>Bullets</h1>
+<h2><%= @taxonomy.name %> / <%= @taxon.name %></h2>
+
+<table class="index" id="listing_bullets" data-hook="table-bullets">
+  <thead>
+    <tr data-hook="admin_bullets_index_headers">
+      <th><%= t(:value) %></th>
+      <th><%= t(:image_code) %></th>
+      <th><%= t(:sort) %></th>
+      <th><%= t(:active) %></th>
+      <th data-hook="admin_bullets_index_header_actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bullets.each do |bullet|%>
+      <tr data-hook="admin_bullets_index_rows">
+        <td><%= link_to truncate(bullet.description, :length => 100), edit_admin_taxonomy_taxon_bullet_url(@taxonomy, @taxon, bullet), :class => 'edit' %></td>
+        <td><%= bullet.image_code %>
+        <td><%= bullet.line_number %>
+        <td><%= bullet.is_active == 1 ? image_tag('admin/icons/16x16/4.png') : image_tag('admin/icons/16x16/2.png') %>
+        <td data-hook="admin_bullets_index_row_actions">
+          <%= link_to t('edit'), edit_admin_taxonomy_taxon_bullet_url(@taxonomy, @taxon, bullet), :class => 'edit' %> &nbsp;
+          <%= link_to t('delete'), [:admin, @taxonomy, @taxon, bullet], :confirm => "Are you sure?", :method=>:delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to t(:'Back'), edit_admin_taxonomy_url( @taxonomy ) %></p>

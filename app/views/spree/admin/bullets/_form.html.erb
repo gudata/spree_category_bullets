@@ -1,0 +1,24 @@
+<%= f.field_container :description do %>
+  <%= f.label :description, t(:description) %><br />
+  <%= f.text_area :description, {:cols => 60, :rows => 4, :class => 'fullwidth'}  %>
+<% end %>
+
+<%= f.field_container :image_code do %>
+  <%= f.label :image_code, t(:image_code) %><br />
+  <%= f.text_field :image_code %>
+  <p>
+    Hint: This could be a property of the product. This way you can 'tie' different bullets to the products based on the image code. 
+    For example in a category all the products with the same image code will have the same bullets.
+    You have to create the image_code propery by your own. And use the right partial in the store (it is included in the extension)
+  </p>
+<% end %>
+
+<%= f.field_container :line_number do %>
+  <%= f.label :line_number, t(:line_number) %><br />
+  <%= f.text_field :line_number %>
+<% end %>
+
+<%= f.field_container :is_active do %>
+  <%= f.label :is_active, t(:active), :for=> 'bullet_is_active_1' %><%= f.radio_button(:is_active, "1") %>
+  <%= f.label :is_active, t(:not_active), :for=> 'bullet_is_active_0' %><%= f.radio_button(:is_active, "0") %>
+<% end %>

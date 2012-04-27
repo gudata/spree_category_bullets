@@ -1,0 +1,15 @@
+<% 
+show_bullets_for_taxon = @product.taxons.first
+
+bullets = show_bullets_for_taxon.bullets.active.sorted
+
+unless !(@product or bullets.empty?) %>
+  <section id="bullets">
+    <ul>
+      <% 
+      bullets.each do |bullet| %>
+        <%= content_tag :li, bullet.description %>
+      <% end %>
+    </ul>
+  </section>
+<% end %> 
