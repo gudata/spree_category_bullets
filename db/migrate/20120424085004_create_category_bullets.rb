@@ -11,8 +11,8 @@ class CreateCategoryBullets < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :spree_bullets_taxons, [:taxon_id], :name => 'index_bullets_taxon'
-    add_index :spree_bullets_taxons, [:taxon_id, :image_code], :name => 'index_bullets_taxon_image_code'
+    add_index :spree_bullets, [:taxon_id], :name => 'index_bullets_taxon'
+    add_index :spree_bullets, [:taxon_id, :image_code], :name => 'index_bullets_taxon_image_code'
   end
 
   def self.down
