@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_category_bullets'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'Add sorted bullets/properties on categories.'
   s.description = 'Each category can have orederd list of properties. Those properties are displayed on all the products'
   s.required_ruby_version = '>= 1.8.7'
